@@ -1,9 +1,9 @@
 # Магазин, торгующий компьютерами и комплектующими со следующим типом товаров:
-##● Настольные компьютеры
-##● Ноутбуки
-##● Мониторы
-##● Жесткие диски
-![sock warehouse]([https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS8JqAvFfih4DK3yW_KfftJk_-sfKC8xPM1g&usqp=CAU](https://androidlime.ru/wp-content/uploads/2019/12/pc-store.jpg))
+● Настольные компьютеры
+● Ноутбуки
+● Мониторы
+● Жесткие диски
+![Магазин_электроники]([https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS8JqAvFfih4DK3yW_KfftJk_-sfKC8xPM1g&usqp=CAU](https://androidlime.ru/wp-content/uploads/2019/12/pc-store.jpg))
 
 
 ## Разработчик:
