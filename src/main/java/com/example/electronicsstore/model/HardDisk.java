@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.Hibernate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +23,10 @@ public class HardDisk extends Product {
 
     public HardDisk(long seriesNumber, String manufacturer, int price, int quantityInStock, int volume) {
         super(seriesNumber, manufacturer, price, quantityInStock);
-        this.volume = volume;
+        if (volume <= 0) {
+            throw new RuntimeException("Неверный формат");
+        } else
+            this.volume = volume;
     }
 
     @Override

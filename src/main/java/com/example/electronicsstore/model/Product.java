@@ -26,10 +26,19 @@ public abstract class Product {
     }
 
     public Product(long seriesNumber, String manufacturer, int price, int quantityInStock) {
-        this.seriesNumber = seriesNumber;
+        if (seriesNumber <= 0) {
+            throw new RuntimeException("Неверный формат");
+        } else
+            this.seriesNumber = seriesNumber;
         this.manufacturer = manufacturer;
-        this.price = price;
-        this.quantityInStock = quantityInStock;
+        if (price <= 0) {
+            throw new RuntimeException("Неверный формат");
+        } else
+            this.price = price;
+        if (quantityInStock < 0) {
+            throw new RuntimeException("Неверный формат");
+        } else
+            this.quantityInStock = quantityInStock;
     }
 
     public Product() {

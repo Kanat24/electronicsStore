@@ -6,20 +6,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @NoArgsConstructor
 @Getter
 @Setter
-public class Laptop extends Product{
+public class Laptop extends Product {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Enumerated(EnumType.STRING)
     private Size size;
 
     public Laptop(long seriesNumber, String manufacturer, int price, int quantityInStock, Size size) {
@@ -40,13 +38,14 @@ public class Laptop extends Product{
         return Objects.hash(id, size);
     }
 }
-enum Size {
-        SIZE_13(13),
-        SIZE_14(14),
-        SIZE_15(15),
-        SIZE_17(17);
 
-    public  final int count;
+enum Size {
+    SIZE_13(13),
+    SIZE_14(14),
+    SIZE_15(15),
+    SIZE_17(17);
+
+    public final int count;
 
     Size(int count) {
         this.count = count;

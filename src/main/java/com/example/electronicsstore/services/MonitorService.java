@@ -16,11 +16,19 @@ public class MonitorService {
     }
 
     public Monitor addMonitor(Monitor monitor) {
+        if (monitor.getDiagonal() <= 0 || monitor.getPrice() < 0 ||
+                monitor.getSeriesNumber() <= 0 || monitor.getQuantityInStock() < 0) {
+            throw new RuntimeException("Неверный формат");
+        }
         return monitorRepository.save(monitor);
     }
 
     public Monitor editMonitor(long id, Monitor monitor) {
         Monitor dbMonitor = monitorRepository.findById(id).orElseThrow(RuntimeException::new);
+        if (monitor.getDiagonal() <= 0 || monitor.getPrice() < 0 ||
+                monitor.getSeriesNumber() <= 0 || monitor.getQuantityInStock() < 0) {
+            throw new RuntimeException("Неверный формат");
+        }
         dbMonitor.setDiagonal(monitor.getDiagonal());
         dbMonitor.setManufacturer(monitor.getManufacturer());
         dbMonitor.setPrice(monitor.getPrice());

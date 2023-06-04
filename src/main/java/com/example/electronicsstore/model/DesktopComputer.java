@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -20,14 +17,13 @@ public class DesktopComputer extends Product {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
+    @Enumerated(EnumType.STRING)
     private FormFactor formFactor;
 
     public DesktopComputer(long seriesNumber, String manufacturer, int price, int quantityInStock, FormFactor formFactor) {
         super(seriesNumber, manufacturer, price, quantityInStock);
         this.formFactor = formFactor;
     }
-
 
 
     @Override
@@ -43,6 +39,7 @@ public class DesktopComputer extends Product {
         return Objects.hash(id, formFactor);
     }
 }
-enum FormFactor{
+
+enum FormFactor {
     DESKTOP, NETTOP, MONOBLOCK
 }

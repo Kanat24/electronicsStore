@@ -19,22 +19,24 @@ public class LaptopController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Laptop> addLaptop(@RequestBody Laptop laptop){
-        if (laptopService==null){
+    public ResponseEntity<Laptop> addLaptop(@RequestBody Laptop laptop) {
+        if (laptopService == null) {
             ResponseEntity.badRequest().build();
         }
         assert laptopService != null;
         Laptop dbLaptop = laptopService.addLaptop(laptop);
         return ResponseEntity.ok(dbLaptop);
     }
+
     @PutMapping("/update/{id}")
-    public ResponseEntity<Laptop> updateLaptop(@PathVariable ("id") long id,
-                                                          @RequestBody(required = false) Laptop laptop){
+    public ResponseEntity<Laptop> updateLaptop(@PathVariable("id") long id,
+                                               @RequestBody(required = false) Laptop laptop) {
         Laptop updateLaptop = laptopService.editLaptop(id, laptop);
         return ResponseEntity.ok(updateLaptop);
     }
+
     @GetMapping("/getAll")
-    public ResponseEntity<List<Laptop>>getAllLaptop(){
+    public ResponseEntity<List<Laptop>> getAllLaptop() {
         return ResponseEntity.ok(laptopService.getAllLaptop());
     }
 }

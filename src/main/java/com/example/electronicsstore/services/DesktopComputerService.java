@@ -10,17 +10,23 @@ import java.util.List;
 public class DesktopComputerService {
 
     private final DesktopComputerRepository desktopComputerRepository;
+
     public DesktopComputerService(DesktopComputerRepository desktopComputerRepository) {
         this.desktopComputerRepository = desktopComputerRepository;
     }
 
     public DesktopComputer addDesktopComputer(DesktopComputer desktopComputer) {
+        if (desktopComputer.getPrice() < 0 || desktopComputer.getSeriesNumber() <= 0 || desktopComputer.getQuantityInStock() < 0) {
+            throw new RuntimeException("Неверный формат");
+        }
         return desktopComputerRepository.save(desktopComputer);
     }
+
     public List<DesktopComputer> getAllDesktopComputer() {
         return desktopComputerRepository.findAll();
     }
-    public DesktopComputer editDesktopComputer(Long id, DesktopComputer desktopComputer){
+
+    public DesktopComputer editDesktopComputer(Long id, DesktopComputer desktopComputer) {
         DesktopComputer dbDesktopComputer = desktopComputerRepository.findById(id).orElseThrow(RuntimeException::new);
         dbDesktopComputer.setFormFactor(desktopComputer.getFormFactor());
         dbDesktopComputer.setManufacturer(desktopComputer.getManufacturer());

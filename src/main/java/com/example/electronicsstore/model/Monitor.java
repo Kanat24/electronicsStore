@@ -21,8 +21,12 @@ public class Monitor extends Product {
 
     public Monitor(long seriesNumber, String manufacturer, int price, int quantityInStock, int diagonal) {
         super(seriesNumber, manufacturer, price, quantityInStock);
-        this.diagonal = diagonal;
+        if (diagonal <= 0) {
+            throw new RuntimeException("Неверный формат");
+        } else
+            this.diagonal = diagonal;
     }
+
     public Monitor() {
     }
 

@@ -20,22 +20,24 @@ public class MonitorController {
 
 
     @PostMapping("/add")
-    public ResponseEntity<Monitor> addLaptop(@RequestBody Monitor monitor){
-        if (monitorService==null){
+    public ResponseEntity<Monitor> addLaptop(@RequestBody Monitor monitor) {
+        if (monitorService == null) {
             ResponseEntity.badRequest().build();
         }
         assert monitorService != null;
         Monitor dbMonitor = monitorService.addMonitor(monitor);
         return ResponseEntity.ok(dbMonitor);
     }
+
     @PutMapping("/update/{id}")
-    public ResponseEntity<Monitor> updateLaptop(@PathVariable ("id") long id,
-                                               @RequestBody(required = false) Monitor monitor){
+    public ResponseEntity<Monitor> updateLaptop(@PathVariable("id") long id,
+                                                @RequestBody(required = false) Monitor monitor) {
         Monitor updateMonitor = monitorService.editMonitor(id, monitor);
         return ResponseEntity.ok(updateMonitor);
     }
+
     @GetMapping("/getAll")
-    public ResponseEntity<List<Monitor>>getAllMonitor(){
+    public ResponseEntity<List<Monitor>> getAllMonitor() {
         return ResponseEntity.ok(monitorService.getAllMonitor());
     }
 }
