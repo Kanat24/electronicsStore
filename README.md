@@ -3,7 +3,7 @@
 ● Ноутбуки
 ● Мониторы
 ● Жесткие диски
-![Магазин_электроники]([https://vector-volga.ru/image/data/novosti/Komputer%20shop/KPq-qORcEv8-1.jpg))
+![Магазин_электроники]([https://vector-volga.ru/image/data/novosti/Komputer%20shop/KPq-qORcEv8-1.jpg])
 
 
 ## Разработчик:
