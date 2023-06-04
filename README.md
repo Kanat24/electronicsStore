@@ -3,7 +3,7 @@
 ● Ноутбуки
 ● Мониторы
 ● Жесткие диски
-![Магазин_электроники]([https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS8JqAvFfih4DK3yW_KfftJk_-sfKC8xPM1g&usqp=CAU](https://androidlime.ru/wp-content/uploads/2019/12/pc-store.jpg))
+![Магазин_электроники]([https://vector-volga.ru/image/data/novosti/Komputer%20shop/KPq-qORcEv8-1.jpg))
 
 
 ## Разработчик:
